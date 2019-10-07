@@ -1,5 +1,6 @@
 import koa from "koa"
 import cors from "koa2-cors"
+import addons from "./addons/index.js"
 
 const app = new koa();
 
@@ -18,8 +19,21 @@ if(process.env.NODE_ENV=="development"){
     }));
 }
 
+app.use(addons); // 初始化逻辑
+
+
 app.use(async ctx => {
-    ctx.body = 'Hello World1';
+    if(ctx.request.path === "/"){
+
+        if(!ctx.session.num){
+            ctx.session.num = 1;
+        }else{
+            ctx.session.num ++ ;
+        }
+        console.log(ctx.session)
+    
+        ctx.body = 'Hello World '+ctx.session.num;
+    }
 });
 
 
