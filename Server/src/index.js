@@ -1,10 +1,13 @@
 import app from "./app"
 import http from "http"
+import config from "./config"
 
 let server;
-server = http.createServer(app)
-
 let currentApp = app;
+
+
+
+server = http.createServer(app)
 server.listen(80);
 
 

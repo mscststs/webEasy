@@ -1,0 +1,9 @@
+{
+    "http":true,
+    "httpPort":80,
+    "https":false,
+    "httpsPort":443,
+    "httpsCertification":{
+
+    }
+}
