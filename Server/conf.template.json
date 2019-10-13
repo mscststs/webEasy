@@ -1,9 +1,12 @@
 {
-    "http":true,
-    "httpPort":80,
-    "https":false,
-    "httpsPort":443,
-    "httpsCertification":{
-
+    "http":{
+        "enable":true,
+        "port":80
+    },
+    "https":{
+        "enable":false,
+        "port":443,
+        "key":"PATH/TO/Key.key",
+        "crt":"PATH/TO/crt.crt"
     }
 }
