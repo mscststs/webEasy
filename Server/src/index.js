@@ -10,6 +10,7 @@ let currentApp = app;
 async function init(){
     // 初始化配置文件，开启服务器
     const config = await readConfig();
+    process.env.config = config;
     // 检查 http server
     if(config.http && config.http.enable){
         try{
