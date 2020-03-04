@@ -12,7 +12,8 @@ root.get("/",async (ctx)=>{
  * 404 兜底处理
  */
 root.get("*",async (ctx)=>{
-    ctx.body = ctx.addons
+    ctx.body = ctx;
+    // ctx.body = {status:404};
     ctx.status = 404
 })
 
